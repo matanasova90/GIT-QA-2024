@@ -1,3 +1,6 @@
 li{
     background-color: antiquewhite;
 }
+a{
+    column-rule-color: black;
+}
