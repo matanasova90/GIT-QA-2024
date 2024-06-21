@@ -75,8 +75,9 @@
             <button class="button operation" onclick="chooseOperation('-')">-</button>
             <button class="button" onclick="appendNumber('0')">0</button>
             <button class="button" onclick="appendNumber('.')">.</button>
-            <button class="button operation" onclick="calculate()">=</button>
+            <button class="button" onclick="deleteNumber()">DEL</button>
             <button class="button operation" onclick="chooseOperation('+')">+</button>
+            <button class="button operation" onclick="calculate()">=</button>
         </div>
     </div>
 
@@ -128,12 +129,18 @@
             updateDisplay();
         }
 
+        function deleteNumber() {
+            currentNumber = currentNumber.toString().slice(0, -1);
+            updateDisplay();
+        }
+
         function updateDisplay() {
             const display = document.getElementById('display');
-            display.innerText = currentNumber;
+            display.innerText = currentNumber || '0';
         }
 
         updateDisplay();
+
     </script>
 </body>
 </html>
