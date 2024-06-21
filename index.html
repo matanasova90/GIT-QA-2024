@@ -19,6 +19,20 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .calculator::before {
+            content: "💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 75%, rgba(255, 192, 203, 0.3) 75%);
+            background-size: 50px 50px;
+            z-index: 0;
+            opacity: 0.5;
         }
         .display {
             width: 100%;
@@ -30,11 +44,15 @@
             border-radius: 5px;
             margin-bottom: 10px;
             font-size: 24px;
+            position: relative;
+            z-index: 1;
         }
         .buttons {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
+            position: relative;
+            z-index: 1;
         }
         .button {
             padding: 20px;
@@ -140,7 +158,6 @@
         }
 
         updateDisplay();
-
     </script>
 </body>
 </html>
